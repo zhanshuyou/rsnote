@@ -1,0 +1,17 @@
+[package]
+name = "rsnote"
+version = "0.1.0"
+authors = ["shuyoou@outlook.com"]
+description = "A note taking app written in Rust that used in command line"
+license = "MIT"
+keywords = ["note", "note taking", "command line", "cli"]
+categories = ["tools"]
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.4.10", features = ["derive"] }
+chrono = "0.4.31"
+
+[dev-dependencies]
+
+
