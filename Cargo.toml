@@ -2,7 +2,7 @@
 name = "rsnote"
 version = "0.1.0"
 authors = ["shuyoou@outlook.com"]
-description = "A note taking app written in Rust that used in command line"
+description = "A command-line note-taking app written in Rust"
 license = "MIT"
 keywords = ["note", "note taking", "command line", "cli"]
 categories = ["tools"]
