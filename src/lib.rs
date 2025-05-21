@@ -1,3 +1,5 @@
+mod config;
+
 use std::fs::{File, OpenOptions};
 use std::io::{self, BufRead, BufReader, Write};
 use clap::{Parser, Subcommand};

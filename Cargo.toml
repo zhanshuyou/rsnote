@@ -4,14 +4,23 @@ version = "0.1.0"
 authors = ["shuyoou@outlook.com"]
 description = "A command-line note-taking app written in Rust"
 license = "MIT"
+repository = "https://github.com/zhanshuyou/rsnote"
 keywords = ["note", "note taking", "command line", "cli"]
-categories = ["tools"]
+categories = ["command-line-utilities", "filesystem"]
 edition = "2024"
 
 [dependencies]
 clap = { version = "4.4.10", features = ["derive"] }
 chrono = "0.4.31"
+dirs = "4.0"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.7"
+thiserror = "1.0"
 
 [dev-dependencies]
+
+[[bin]]
+name = "rsnote"
+path = "src/main.rs"
 
 
