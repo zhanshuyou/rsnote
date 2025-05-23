@@ -1,10 +1,8 @@
-mod config;
+pub mod config;
+pub mod cli;
+pub mod note;
 
-use std::fs::{File, OpenOptions};
-use std::io::{self, BufRead, BufReader, Write};
 use clap::{Parser, Subcommand};
-
-pub const NOTES_DIR: &str = "rsnotes";
 
 #[derive(Parser)]
 #[command(name = "Note App")]
@@ -36,9 +34,10 @@ pub enum Commands {
         /// Note title or ID
         identifier: String,
     },
-    /// Search notes by keyword
+
+    /// Search for notes
     Search {
-        /// Keyword to search for
+        /// Search query
         keyword: String,
     },
 }

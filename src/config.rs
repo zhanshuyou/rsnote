@@ -1,6 +1,6 @@
 use std::fs;
-use std::path::{Path, PathBuf};
-use std::io::{self, Write};
+use std::path::{PathBuf};
+use std::io::{self};
 use dirs;
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
@@ -20,7 +20,7 @@ pub enum ConfigError {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Config {
-    notes_dir: PathBuf,
+    pub notes_dir: PathBuf,
 }
 
 impl Default for Config {

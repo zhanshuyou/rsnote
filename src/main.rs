@@ -1,11 +1,7 @@
-use std::fs;
-
-use rsnote::{NOTES_DIR};
-
+use rsnote::cli;
 fn main() {
-    // Ensure notes directory exists
-    if let Err(e) = fs::create_dir_all(NOTES_DIR) {
-        eprintln!("Failed to create notes directory: {}", e);
-        return;
+    if let Err(e) = cli::run() {
+        eprintln!("Error: {}", e);
+        std::process::exit(1);
     }
 }
