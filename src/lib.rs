@@ -40,9 +40,11 @@ pub enum Commands {
         /// Search query
         keyword: String,
     },
+    /// Update a note
     Update {
         identifier: String,
         content: Option<String>,
     },
+    /// Clear the configuration file
     ClearConfig,
 }
