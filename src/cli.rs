@@ -1,4 +1,5 @@
 use clap::Parser;
+use crate::config::Config;
 use crate::{Cli, Commands};
 use crate::note::NoteApp;
 
@@ -29,13 +30,29 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
             }
         }
         Commands::Show { identifier } => {
-            app.show_note(&identifier)?;
+            let content = app.show_note(&identifier)?;
+            println!("{}", content);
         }
         Commands::Delete { identifier } => {
             app.delete_note(&identifier)?;
         }
+        Commands::Update { identifier, content } => {
+            app.update_note(&identifier, content)?;
+        }
         Commands::Search { keyword } => {
-            app.search_notes(&keyword)?;
+            let results = app.search_notes(&keyword)?;
+            if results.is_empty() {
+                println!("No notes found.");
+            } else {
+                println!("{:<4} | {:<30} | {:<19}", "ID", "Title", "Last Updated");
+                println!("{}", "-".repeat(80));
+                for result in results {
+                    println!("{:<4} | {:<30} | {:<19}", result.note.id, result.note.title, result.note.last_updated)
+                }
+            }
+        }
+        Commands::ClearConfig => {
+            Config::clear_config()?;
         }
     }
 

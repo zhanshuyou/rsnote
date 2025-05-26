@@ -1,5 +1,5 @@
-pub mod config;
 pub mod cli;
+pub mod config;
 pub mod note;
 
 use clap::{Parser, Subcommand};
@@ -40,4 +40,9 @@ pub enum Commands {
         /// Search query
         keyword: String,
     },
+    Update {
+        identifier: String,
+        content: Option<String>,
+    },
+    ClearConfig,
 }

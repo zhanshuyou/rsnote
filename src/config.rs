@@ -54,6 +54,15 @@ impl Config {
         Ok(())
     }
 
+    pub fn clear_config() -> Result<(), ConfigError> {
+        let config_path = Self::config_path()?;
+        if config_path.exists() {
+            fs::remove_file(config_path)?;
+        }
+        println!("Configuration cleared.");
+        Ok(())
+    }
+
     fn config_path() -> Result<PathBuf, ConfigError> {
         let config_dir = dirs::config_dir()
             .ok_or(ConfigError::Io(io::Error::new(
@@ -70,6 +79,7 @@ impl Config {
         println!("Welcome to rsnote!");
         println!("Where would you like to store your notes?");
         println!("Default location: {}", default_config.notes_dir.display());
+        println!("Config file location: {}", Self::config_path()?.display());
         println!("Press Enter to use default, or enter a custom path:");
 
         let mut input = String::new();
