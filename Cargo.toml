@@ -5,7 +5,7 @@ authors = ["shuyoou@outlook.com"]
 description = "A command-line note-taking app written in Rust"
 license = "MIT"
 repository = "https://github.com/zhanshuyou/rsnote"
-keywords = ["note", "note taking", "command line", "cli"]
+keywords = ["note", "cli"]
 categories = ["command-line-utilities", "filesystem"]
 edition = "2024"
 
