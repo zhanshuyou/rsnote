@@ -1,4 +1,4 @@
-use rsnote::cli;
+use rsnote_cli::cli;
 fn main() {
     if let Err(e) = cli::run() {
         eprintln!("Error: {}", e);

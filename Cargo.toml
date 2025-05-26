@@ -1,5 +1,5 @@
 [package]
-name = "rsnote"
+name = "rsnote_cli"
 version = "0.1.0"
 authors = ["shuyoou@outlook.com"]
 description = "A command-line note-taking app written in Rust"
